@@ -1,0 +1,203 @@
+================================================================================
+GUIA COMPLETO: COMO FAZER DEPLOY DA GIGI'S WEAR NO VERCEL
+================================================================================
+
+Este arquivo contém instruções passo a passo para fazer deploy do site Gigi's 
+Wear no Vercel. Siga cada etapa cuidadosamente.
+
+================================================================================
+PASSO 1: PREPARAR O REPOSITÓRIO GIT
+================================================================================
+
+1.1) Abra o terminal/prompt de comando na pasta do projeto (gigis-wear)
+
+1.2) Inicialize o repositório Git (se não estiver inicializado):
+     $ git init
+
+1.3) Configure seu nome e email (se for a primeira vez):
+     $ git config user.name "Seu Nome"
+     $ git config user.email "seu@email.com"
+
+1.4) Adicione todos os arquivos ao Git:
+     $ git add .
+
+1.5) Faça o primeiro commit:
+     $ git commit -m "Projeto Gigi's Wear - Loja Online de Roupas Femininas"
+
+1.6) Verifique o status:
+     $ git status
+     (Deve mostrar: "nothing to commit, working tree clean")
+
+================================================================================
+PASSO 2: CRIAR REPOSITÓRIO NO GITHUB
+================================================================================
+
+2.1) Acesse https://github.com (crie uma conta se não tiver)
+
+2.2) Clique no ícone "+" no canto superior direito
+
+2.3) Selecione "New repository"
+
+2.4) Preencha os dados:
+     - Repository name: gigis-wear
+     - Description: Loja online de roupas femininas de academia
+     - Visibility: Public (recomendado para Vercel)
+     - Não marque "Initialize this repository with"
+
+2.5) Clique em "Create repository"
+
+2.6) Na página que abrir, copie o comando que começa com "git remote add origin"
+     Será algo como:
+     $ git remote add origin https://github.com/seu-usuario/gigis-wear.git
+
+2.7) Cole esse comando no seu terminal
+
+2.8) Renomeie a branch para "main" (se necessário):
+     $ git branch -M main
+
+2.9) Faça o push do código para o GitHub:
+     $ git push -u origin main
+
+     (Pode pedir seu username e token do GitHub)
+
+2.10) Verifique se funcionou acessando seu repositório no GitHub
+
+================================================================================
+PASSO 3: CONECTAR AO VERCEL
+================================================================================
+
+3.1) Acesse https://vercel.com
+
+3.2) Clique em "Sign Up" se não tiver conta, ou "Log In" se tiver
+
+3.3) Escolha "Continue with GitHub" para facilitar
+
+3.4) Autorize o Vercel a acessar sua conta GitHub
+
+3.5) Na dashboard do Vercel, clique em "New Project"
+
+3.6) Clique em "Import Git Repository"
+
+3.7) Procure por "gigis-wear" na lista de repositórios
+
+3.8) Clique em "Import"
+
+================================================================================
+PASSO 4: CONFIGURAR O PROJETO NO VERCEL
+================================================================================
+
+4.1) Na tela de configuração, verifique:
+     - Project Name: gigis-wear (ou outro nome desejado)
+     - Framework: Vite (deve ser selecionado automaticamente)
+     - Root Directory: ./ (raiz do projeto)
+
+4.2) Clique em "Environment Variables" (opcional por enquanto)
+     - Não é necessário adicionar variáveis para este projeto
+
+4.3) Clique em "Deploy"
+
+4.4) Aguarde o deploy terminar (geralmente 1-2 minutos)
+
+4.5) Você verá uma mensagem "Congratulations!" quando terminar
+
+4.6) Clique em "Visit" para acessar seu site ao vivo!
+
+================================================================================
+PASSO 5: CONFIGURAR DOMÍNIO PERSONALIZADO (OPCIONAL)
+================================================================================
+
+5.1) Se quiser usar um domínio personalizado (ex: www.gigiswear.com):
+
+5.2) No painel do Vercel, vá para "Settings" > "Domains"
+
+5.3) Clique em "Add Domain"
+
+5.4) Digite seu domínio (ex: gigiswear.com)
+
+5.5) Siga as instruções para configurar os registros DNS no seu provedor
+
+5.6) O Vercel fornecerá os registros necessários
+
+5.7) Após configurar, o domínio estará ativo em alguns minutos
+
+================================================================================
+PASSO 6: ATUALIZAÇÕES FUTURAS
+================================================================================
+
+Sempre que você fizer mudanças no código e quiser atualizar o site:
+
+6.1) Faça as alterações localmente
+
+6.2) Adicione as mudanças ao Git:
+     $ git add .
+
+6.3) Faça um commit:
+     $ git commit -m "Descrição das mudanças"
+
+6.4) Faça o push para o GitHub:
+     $ git push origin main
+
+6.5) O Vercel detectará automaticamente as mudanças e fará o deploy
+
+6.6) Você pode acompanhar o progresso no painel do Vercel
+
+================================================================================
+SOLUÇÃO DE PROBLEMAS
+================================================================================
+
+PROBLEMA: Deploy falha com erro de build
+SOLUÇÃO: 
+- Verifique se há erros TypeScript: $ pnpm check
+- Verifique o arquivo package.json
+- Veja os logs de erro no painel do Vercel
+
+PROBLEMA: Imagens não aparecem após deploy
+SOLUÇÃO:
+- Verifique se as imagens estão em client/public/images/
+- Confirme os caminhos das imagens no código
+
+PROBLEMA: Carrinho não persiste após recarregar
+SOLUÇÃO:
+- Verifique se localStorage está habilitado no navegador
+- Teste em modo incógnito/privado
+
+PROBLEMA: Estilos não aparecem corretamente
+SOLUÇÃO:
+- Limpe o cache do navegador (Ctrl+Shift+Delete)
+- Verifique se Tailwind CSS está compilado corretamente
+
+================================================================================
+INFORMAÇÕES ÚTEIS
+================================================================================
+
+URL do seu site: https://gigis-wear.vercel.app
+(ou seu domínio personalizado se configurado)
+
+Painel do Vercel: https://vercel.com/dashboard
+
+Documentação do Vercel: https://vercel.com/docs
+
+Repositório GitHub: https://github.com/seu-usuario/gigis-wear
+
+================================================================================
+PRÓXIMOS PASSOS
+================================================================================
+
+1. Teste todas as funcionalidades do site após o deploy
+2. Compartilhe o link com amigos e familiares
+3. Monitore o desempenho no painel do Vercel
+4. Faça melhorias e atualizações conforme necessário
+5. Considere adicionar um domínio personalizado
+
+================================================================================
+SUPORTE
+================================================================================
+
+Se encontrar problemas:
+- Verifique a documentação do Vercel: https://vercel.com/docs
+- Consulte a comunidade do Vercel: https://vercel.com/support
+- Revise os logs de erro no painel do Vercel
+
+================================================================================
+Parabéns! Seu site Gigi's Wear está pronto para o mundo! 🎉
+================================================================================
