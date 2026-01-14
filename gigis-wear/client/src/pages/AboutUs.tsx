@@ -87,17 +87,17 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Gisele Silva',
+                name: 'Giovana Lopes',
                 role: 'Fundadora & CEO',
                 description: 'Apaixonada por fitness e moda desde jovem.',
               },
               {
-                name: 'Marina Costa',
+                name: 'Ana Clara',
                 role: 'Diretora de Design',
                 description: 'Especialista em moda esportiva e tendências.',
               },
               {
-                name: 'Carolina Oliveira',
+                name: 'Sarah Lotus',
                 role: 'Gerente de Operações',
                 description: 'Dedicada a garantir qualidade em cada detalhe.',
               },
